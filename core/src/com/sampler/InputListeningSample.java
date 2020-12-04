@@ -18,7 +18,6 @@ import com.badlogic.gdx.utils.viewport.Viewport;
 public class InputListeningSample implements ApplicationListener, InputProcessor {
 
     private static final Logger log = new Logger(InputListeningSample.class.getName(), Logger.DEBUG);
-
     private static final int MAX_MESSAGE_COUNT = 15;
     private final Array<String> messages = new Array<>();
 
