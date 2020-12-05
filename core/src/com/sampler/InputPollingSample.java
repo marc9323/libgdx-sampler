@@ -13,6 +13,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.utils.Logger;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
+import com.sampler.utils.GdxUtils;
 
 public class InputPollingSample implements ApplicationListener {
 
@@ -44,8 +45,7 @@ public class InputPollingSample implements ApplicationListener {
 	@Override
 	public void render() {
 		// clear screen
-		Gdx.gl.glClearColor(0, 0, 0, 1.0f);
-		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
+		GdxUtils.clearScreen();
 
 		// tells batch which camera to use
 		// telling batch position, zoom, of camera
