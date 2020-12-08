@@ -17,7 +17,9 @@ import com.badlogic.gdx.utils.viewport.Viewport;
 
 import java.util.Arrays;
 
-public class GdxReflectionSample implements ApplicationListener {
+import common.SampleBase;
+
+public class GdxReflectionSample extends SampleBase {
 
     private static final Logger log = new Logger(GdxReflectionSample.class.getName(), Logger.DEBUG);
 

@@ -1,17 +1,12 @@
 package com.sampler;
 
 import com.badlogic.gdx.Application;
-import com.badlogic.gdx.ApplicationAdapter;
-import com.badlogic.gdx.ApplicationListener;
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.graphics.GL20;
-import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.utils.Logger;
 
-import static com.badlogic.gdx.Gdx.*;
+import common.SampleBase;
 
-public class ApplicationListenerSample implements ApplicationListener {
+public class ApplicationListenerSample extends SampleBase {
 
 	private static final Logger log = new Logger(ApplicationListenerSample.class.getName(), Logger.DEBUG);
 	private boolean renderInterrupted = true;
