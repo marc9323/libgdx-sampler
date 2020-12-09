@@ -4,9 +4,9 @@ public class SampleInfo {
 
     private final String name;
 
-    private final Class<?> clazz;
+    private final Class<? extends SampleBase> clazz;
 
-    public SampleInfo(Class<?> clazz) {
+    public SampleInfo(Class<? extends SampleBase> clazz) {
         this.clazz = clazz;
         name = clazz.getSimpleName();
     }

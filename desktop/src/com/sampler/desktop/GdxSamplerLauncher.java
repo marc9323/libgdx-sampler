@@ -16,6 +16,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.util.Arrays;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -26,6 +27,9 @@ import javax.swing.ListSelectionModel;
 import javax.swing.SingleSelectionModel;
 import javax.swing.SwingUtilities;
 import javax.swing.WindowConstants;
+
+import common.SampleFactory;
+import common.SamplerInfos;
 
 public class GdxSamplerLauncher extends JFrame {
 
@@ -89,9 +93,7 @@ public class GdxSamplerLauncher extends JFrame {
         // take too much space
         c.weighty = 1;  // wieght used in filling empty space
 
-        sampleList = new JList(
-                new String[] {  "com.sampler.InputPollingSample" }
-        );
+        sampleList = new JList(SamplerInfos.getSampleNames().toArray());
         sampleList.setFixedCellWidth(CELL_WIDTH);
         sampleList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 
@@ -147,19 +149,19 @@ public class GdxSamplerLauncher extends JFrame {
 
         // use reflection to instantiate sample
 
-        ApplicationListener sample;
+        ApplicationListener sample = SampleFactory.newSample(name);
 
-        try {
-            // get sample class object by name
-            // full class name... package...class name
-            Class<ApplicationListener> clazz = ClassReflection.forName(name);
-
-            // create new instance of our sample class
-            sample = ClassReflection.newInstance(clazz);
-        } catch (Exception e) {
-            e.printStackTrace();
-            throw new RuntimeException("Cannot create sample with name= " + name, e);
-        }
+//        try {
+//            // get sample class object by name
+//            // full class name... package...class name
+//            Class<ApplicationListener> clazz = ClassReflection.forName(name);
+//
+//            // create new instance of our sample class
+//            sample = ClassReflection.newInstance(clazz);
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//            throw new RuntimeException("Cannot create sample with name= " + name, e);
+//        }
 
         // constructor for LWJGLAWWTCanvas accepts our sample
         // pass the Sample which implements ApplicationListener

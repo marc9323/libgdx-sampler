@@ -6,8 +6,12 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 import common.SampleBase;
+import common.SampleInfo;
 
 public class GdxGeneratedSample extends SampleBase {
+	public static final SampleInfo SAMPLE_INFO = new SampleInfo(GdxGeneratedSample.class);
+
+
 	SpriteBatch batch;
 	Texture img;
 	

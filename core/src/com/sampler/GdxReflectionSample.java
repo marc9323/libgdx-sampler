@@ -18,8 +18,11 @@ import com.badlogic.gdx.utils.viewport.Viewport;
 import java.util.Arrays;
 
 import common.SampleBase;
+import common.SampleInfo;
 
 public class GdxReflectionSample extends SampleBase {
+
+    public static final SampleInfo SAMPLE_INFO = new SampleInfo(GdxReflectionSample.class);
 
     private static final Logger log = new Logger(GdxReflectionSample.class.getName(), Logger.DEBUG);
 

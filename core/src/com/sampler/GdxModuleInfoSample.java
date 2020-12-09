@@ -5,8 +5,11 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.utils.Logger;
 
 import common.SampleBase;
+import common.SampleInfo;
 
 public class GdxModuleInfoSample extends SampleBase {
+
+	public static final SampleInfo SAMPLE_INFO = new SampleInfo(GdxModuleInfoSample.class);
 
 	private static final Logger log = new Logger(GdxModuleInfoSample.class.getName(), Logger.DEBUG);
 

@@ -12,8 +12,11 @@ import com.badlogic.gdx.utils.viewport.Viewport;
 import com.sampler.utils.GdxUtils;
 
 import common.SampleBase;
+import common.SampleInfo;
 
 public class InputPollingSample extends SampleBase {
+
+	public static final SampleInfo SAMPLE_INFO = new SampleInfo(InputPollingSample.class);
 
 	private static final Logger log = new Logger(InputPollingSample.class.getName(), Logger.DEBUG);
 	private OrthographicCamera camera;
