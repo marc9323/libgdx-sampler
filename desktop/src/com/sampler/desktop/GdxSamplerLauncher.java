@@ -2,7 +2,6 @@ package com.sampler.desktop;
 
 import com.badlogic.gdx.ApplicationListener;
 import com.badlogic.gdx.backends.lwjgl.LwjglAWTCanvas;
-import com.badlogic.gdx.utils.reflect.ClassReflection;
 
 import java.awt.BorderLayout;
 import java.awt.Container;
@@ -16,7 +15,6 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
-import java.util.Arrays;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -24,12 +22,11 @@ import javax.swing.JList;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.ListSelectionModel;
-import javax.swing.SingleSelectionModel;
 import javax.swing.SwingUtilities;
 import javax.swing.WindowConstants;
 
-import common.SampleFactory;
-import common.SamplerInfos;
+import com.sampler.common.SampleFactory;
+import com.sampler.common.SamplerInfos;
 
 public class GdxSamplerLauncher extends JFrame {
 
@@ -150,18 +147,6 @@ public class GdxSamplerLauncher extends JFrame {
         // use reflection to instantiate sample
 
         ApplicationListener sample = SampleFactory.newSample(name);
-
-//        try {
-//            // get sample class object by name
-//            // full class name... package...class name
-//            Class<ApplicationListener> clazz = ClassReflection.forName(name);
-//
-//            // create new instance of our sample class
-//            sample = ClassReflection.newInstance(clazz);
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//            throw new RuntimeException("Cannot create sample with name= " + name, e);
-//        }
 
         // constructor for LWJGLAWWTCanvas accepts our sample
         // pass the Sample which implements ApplicationListener

@@ -4,8 +4,8 @@ import com.badlogic.gdx.Application;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.utils.Logger;
 
-import common.SampleBase;
-import common.SampleInfo;
+import com.sampler.common.SampleBase;
+import com.sampler.common.SampleInfo;
 
 public class GdxModuleInfoSample extends SampleBase {
 

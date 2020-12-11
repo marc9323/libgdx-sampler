@@ -11,8 +11,8 @@ import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 import com.sampler.utils.GdxUtils;
 
-import common.SampleBase;
-import common.SampleInfo;
+import com.sampler.common.SampleBase;
+import com.sampler.common.SampleInfo;
 
 public class InputPollingSample extends SampleBase {
 

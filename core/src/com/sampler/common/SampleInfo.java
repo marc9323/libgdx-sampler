@@ -1,4 +1,4 @@
-package common;
+package com.sampler.common;
 
 public class SampleInfo {
 

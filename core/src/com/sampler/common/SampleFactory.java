@@ -1,4 +1,4 @@
-package common;
+package com.sampler.common;
 
 import com.badlogic.gdx.utils.reflect.ClassReflection;
 

@@ -1,4 +1,4 @@
-package common;
+package com.sampler.common;
 
 
 // all samples will extend this class, SampleBase
