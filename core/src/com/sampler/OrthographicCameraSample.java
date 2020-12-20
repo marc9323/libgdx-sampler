@@ -22,8 +22,10 @@ public class OrthographicCameraSample extends SampleBase {
 
     public static final SampleInfo SAMPLE_INFO = new SampleInfo(OrthographicCameraSample.class);
 
-    private static final float WORLD_WIDTH = 10.8f; // world units
-    private static final float WORLD_HEIGHT = 7.2f; // world units
+    // recall is GdxSamplerLauncher we set the resolution to 1280 x 720!
+    // a single world unit is 100 pixels
+    private static final float WORLD_WIDTH = 10.8f; // world units, 1080 / 100 = 10.8f
+    private static final float WORLD_HEIGHT = 7.2f; // world units, 720 / 100 = 7.2f
 
     private static float CAMERA_SPEED = 2.0f; // world units
     private static final float CAMERA_ZOOM_SPEED = 2.0f; // world units
@@ -38,6 +40,9 @@ public class OrthographicCameraSample extends SampleBase {
         Gdx.app.setLogLevel(Application.LOG_DEBUG);
 
         camera = new OrthographicCamera();
+//        camera.position.set(WORLD_WIDTH / 2f, WORLD_HEIGHT / 2f, 0);
+//        camera.update();
+
         viewport = new FitViewport(WORLD_WIDTH, WORLD_HEIGHT, camera);
         batch = new SpriteBatch();
         texture = new Texture(Gdx.files.internal("raw/level-bg.png"));
@@ -46,7 +51,7 @@ public class OrthographicCameraSample extends SampleBase {
 
     @Override
     public void resize(int width, int height) {
-        viewport.update(width, height);
+        viewport.update(width, height, true);
     }
 
     @Override
@@ -70,28 +75,35 @@ public class OrthographicCameraSample extends SampleBase {
         float deltaTime = Gdx.graphics.getDeltaTime();
 
         if(Gdx.input.isKeyPressed(Input.Keys.LEFT)) {
-
+            camera.position.x -= CAMERA_SPEED * deltaTime;
         }
 
         if(Gdx.input.isKeyPressed(Input.Keys.RIGHT)) {
-
+            camera.position.x += CAMERA_SPEED * deltaTime;
         }
 
         if(Gdx.input.isKeyPressed(Input.Keys.UP)) {
-
+            camera.position.y += CAMERA_SPEED * deltaTime;
         }
 
         if(Gdx.input.isKeyPressed(Input.Keys.DOWN)) {
-
+            camera.position.y -= CAMERA_SPEED * deltaTime;
         }
 
         if(Gdx.input.isKeyPressed(Input.Keys.PAGE_UP)) {
-
+            camera.zoom -= CAMERA_ZOOM_SPEED;
         }
 
-        if(Gdx.input.isKeyPressed(Input.Keys.PAGE_DOWN) {
-
+        if(Gdx.input.isKeyPressed(Input.Keys.PAGE_DOWN)) {
+            camera.zoom += CAMERA_ZOOM_SPEED;
         }
+
+        if(Gdx.input.isKeyPressed(Input.Keys.ENTER)) {
+            logger.debug("position= " + camera.position);
+            logger.debug("zoom= " + camera.zoom);
+        }
+
+        camera.update();
     }
 
     private void draw() {
