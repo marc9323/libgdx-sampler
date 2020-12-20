@@ -7,6 +7,7 @@ import com.sampler.GdxReflectionSample;
 import com.sampler.InputListeningSample;
 import com.sampler.InputPollingSample;
 import com.sampler.OrthographicCameraSample;
+import com.sampler.ViewportSample;
 
 
 import java.util.ArrayList;
@@ -23,7 +24,8 @@ public class SamplerInfos {
             GdxReflectionSample.SAMPLE_INFO,
             InputListeningSample.SAMPLE_INFO,
             InputPollingSample.SAMPLE_INFO,
-            OrthographicCameraSample.SAMPLE_INFO
+            OrthographicCameraSample.SAMPLE_INFO,
+            ViewportSample.SAMPLE_INFO
 
     );
 
