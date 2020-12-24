@@ -13,7 +13,6 @@ import com.sampler.common.SampleBase;
 import com.sampler.common.SampleInfo;
 import com.sampler.utils.GdxUtils;
 
-import javax.xml.soap.Text;
 
 
 public class OrthographicCameraSample extends SampleBase {
