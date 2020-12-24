@@ -1,6 +1,7 @@
 package com.sampler;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
@@ -30,6 +31,8 @@ public class ShapeRendererSample extends SampleBase {
     private boolean drawCircles = true;
     private boolean drawRectangles = true;
     private boolean drawPoints = true;
+
+    private float circleX = 0.0f;
 
     @Override
     public void create() {
@@ -102,10 +105,12 @@ public class ShapeRendererSample extends SampleBase {
     }
 
     private void drawCircles() {
+        circleX += .09f;
         renderer.begin(ShapeRenderer.ShapeType.Filled);
 
         renderer.setColor(Color.GREEN);
-        renderer.circle(2, 2, 2, 30);
+        renderer.circle(circleX, 2, 2, 30);
+
         renderer.circle(-5, -5, 1);
 
         renderer.end();
@@ -155,6 +160,20 @@ public class ShapeRendererSample extends SampleBase {
         renderer.line(0, -worldHeight, 0, worldHeight);
 
         renderer.end();
+    }
+
+    @Override
+    public boolean keyDown(int keycode) {
+        if(keycode == Input.Keys.G) {
+            drawGrid = !drawGrid;
+        } else if(keycode == Input.Keys.C) {
+            drawCircles = !drawCircles;
+        } else if(keycode == Input.Keys.R) {
+            drawRectangles = !drawRectangles;
+        } else if(keycode == Input.Keys.P) {
+            drawPoints = !drawPoints;
+        }
+        return true;
     }
 
     @Override
